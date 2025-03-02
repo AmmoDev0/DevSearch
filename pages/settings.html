@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSearch Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        #sidebar {
+            width: 250px;
+            background: #1e1e1e;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        #sidebar h2 {
+            margin: 0;
+            font-size: 30px;
+            color: #8ab4f8;
+            text-align: center;
+        }
+
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #sidebar li {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+
+        #sidebar li:hover {
+            background: #2a2a2a;
+        }
+
+        #sidebar a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            font-size: larger;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .setting-item {
+            background: #1e1e1e;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .setting-item:hover {
+            background: #2a2a2a;
+        }
+
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+<div id="sidebar">
+    <h2>DevSearch Settings</h2>
+    <ul>
+        <li onclick="showContent('general')"><a href="#">General</a></li>
+        <li onclick="showContent('appearance')"><a href="#">Appearance</a></li>
+        <li onclick="showContent('about')"><a href="#">About</a></li>
+    </ul>
+</div>
+<div id="content">
+    <h1>General Settings</h1>
+    <div class="setting-item"><a href="#">Dark/Light Mode (Coming Soon!)</a></div>
+    <div class="setting-item"><a href="#">Coming Soon!</a></div>
+    <div class="setting-item"><a href="#">Coming Soon!</a></div>
+</div>
+
+<script>
+    function showContent(section) {
+        const content = document.getElementById('content');
+        let html = '';
+
+        if (section === 'general') {
+            html = '<h1>General Settings</h1>' +
+                   '<div class="setting-item"><a href="#">Check Updates</a></div>' +
+                   '<div class="setting-item"><a href="#">Coming Soon!</a></div>' +
+                   '<div class="setting-item"><a href="#">Coming Soon!</a></div>';
+        } else if (section === 'appearance') {
+            html = '<h1>Appearance Settings</h1>' +
+                   '<div class="setting-item"><a href="#">Dark Mode</a></div>' +
+                   '<div class="setting-item"><a href="#">Theme Colors (Coming Soon!)</a></div>';
+                   '<div class="setting-item"><a href="#">Coming Soon!</a></div>';
+        } else if (section === 'about') {
+            html = '<h1>About DevSearch</h1>' +
+                   '<p>Version 0.3</p>' +
+                   '<p>Created by AmmoDev</p>';
+        }
+
+        content.innerHTML = html;
+    }
+</script>
+</body>
+</html>
